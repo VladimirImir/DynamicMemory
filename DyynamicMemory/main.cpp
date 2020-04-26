@@ -8,7 +8,7 @@ int* push_front(int arr[], int& n, int value);
 int* insert(int arr[], int& n, int index, int value);
 int* pop_back(int arr[], int& n);
 int* pop_front(int arr[], int& n);
-int* erase(int* &arr, int& n, int index);  //int arr[], int& n, int index
+int* erase(int* &arr, int& n, int index);
 
 void main()
 {
@@ -84,11 +84,7 @@ void Print(int arr[], const int n)
 
 int* push_back(int arr[], int& n, int value)
 {
-	///////////////////////////////////////////////////////////
-	/////////	Добавление значения в конец массива:	///////
-	///////////////////////////////////////////////////////////
 
-	//1) Создаем буферный массив нужного размера:
 	int* buffer = new int[n + 1];
 	//2) Копируем все элементы исходного массива в буферный, СООТВЕТСТВЕННО:
 	for (int i = 0; i < n; i++)
