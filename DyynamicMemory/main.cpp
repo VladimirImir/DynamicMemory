@@ -13,7 +13,7 @@ int* erase(int* &arr, int& n, int index);
 void main()
 {
 	setlocale(LC_ALL, "");
-	int n; //Кол-во элементов массива
+	int n;
 	cout << "Input number of elements: "; cin >> n;
 	int* arr = new int[n] {};
 	FillRand(arr, n);
@@ -86,20 +86,15 @@ int* push_back(int arr[], int& n, int value)
 {
 
 	int* buffer = new int[n + 1];
-	//2) Копируем все элементы исходного массива в буферный, СООТВЕТСТВЕННО:
 	for (int i = 0; i < n; i++)
 	{
 		buffer[i] = arr[i];
 	}
-	//3) Удаляем исходный массив:
 	
 	delete[] arr;
 	
-	//4) В указатель 'arr' записываем адрес нового массива, в котором уже есть место для добавляемого значения:
 	arr = buffer;
-	//5) Записываем добавляемое значение в конец массива 'arr'
 	arr[n] = value;
-	//6) Увеличиваем количесво элементов массива:
 	n++;
 	return arr;
 }
